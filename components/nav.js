@@ -8,7 +8,7 @@ const Navbar = () => {
 
   return (
     // <nav className="my-1 flex w-full flex-row justify-center shadow-lg shadow-turbo-gray-600/50">
-    <nav className="flex w-full flex-row justify-between shadow-lg shadow-turbo-gray-600/50 md:justify-center">
+    <nav className="flex w-full flex-row justify-between py-2 shadow-lg shadow-turbo-gray-600/50 md:justify-center">
       <div className="mx-auto my-auto">
         <Link href="/">
           <a>
@@ -21,37 +21,43 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="my-auto mx-auto flex flex-row justify-between space-x-2 md:space-x-4 ">
-        <div
-          className={`${
-            router.pathname == '/'
-              ? 'active bg-turbo-blue-500 font-semibold text-white shadow-sm'
-              : ' text-black hover:bg-turbo-gray-500 hover:shadow-sm'
-          } my-1 rounded-sm p-2 text-sm font-semibold md:text-lg`}
-        >
+        <div>
           <Link href="/">
-            <a>WEB</a>
+            <a
+              className={`${
+                router.pathname == '/'
+                  ? 'active bg-turbo-blue-500 font-semibold text-white shadow-sm'
+                  : ' text-black hover:bg-turbo-gray-500 hover:shadow-sm'
+              } my-1 rounded-sm p-2 text-sm font-semibold md:text-lg`}
+            >
+              WEB
+            </a>
           </Link>
         </div>
-        <div
-          className={`${
-            router.pathname == '/web/ai'
-              ? 'active bg-turbo-blue-500 font-semibold text-white shadow-sm'
-              : ' text-black hover:bg-turbo-gray-500 hover:shadow-sm'
-          } my-1 rounded-sm p-2 text-sm font-semibold md:text-lg`}
-        >
+        <div>
           <Link href="/">
-            <a>AI/ML</a>
+            <a
+              className={`${
+                router.pathname.includes('/ai')
+                  ? 'active bg-turbo-blue-500 font-semibold text-white shadow-sm'
+                  : ' text-black hover:bg-turbo-gray-500 hover:shadow-sm'
+              } my-1 rounded-sm p-2 text-sm font-semibold md:text-lg`}
+            >
+              AI/ML
+            </a>
           </Link>
         </div>
-        <div
-          className={`${
-            router.pathname == '/web/jobs'
-              ? 'active bg-turbo-blue-500 font-semibold text-white shadow-sm'
-              : ' text-black hover:bg-turbo-gray-500 hover:shadow-sm'
-          } my-1 rounded-sm p-2 text-sm font-semibold md:text-lg`}
-        >
+        <div>
           <Link href="/">
-            <a>JOBS</a>
+            <a
+              className={`${
+                router.pathname.includes('/jobs')
+                  ? 'active bg-turbo-blue-500 font-semibold text-white shadow-sm'
+                  : ' text-black hover:bg-turbo-gray-500 hover:shadow-sm'
+              } my-1 rounded-sm p-2 text-sm font-semibold md:text-lg`}
+            >
+              JOBS
+            </a>
           </Link>
         </div>
       </div>
