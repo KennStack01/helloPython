@@ -6,7 +6,12 @@
  * Fonts
  */
 
+.custom-btn {
+  @apply bg-white shadow-turbo-blue-500 transition-all duration-150 ease-linear hover:shadow-lg hover:ring-2 hover:ring-turbo-blue-500 hover:ring-offset-2;
+}
+
 html,
 body {
+  scroll-behavior: smooth;
   font-family: 'Inter', sans-serif;
 }
