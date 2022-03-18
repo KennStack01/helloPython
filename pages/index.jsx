@@ -5,6 +5,8 @@ import Image from 'next/image'
 import Navbar from '../components/Navbar'
 import Nav from '../components/nav'
 import Sidebar from '../components/sidebar'
+import WebNavbar from '../components/web/WebNavbar'
+import ArticlesList from '../components/web/articles/ArticlesList'
 
 const Home = () => {
   return (
@@ -19,16 +21,12 @@ const Home = () => {
         <Nav />
       </div>
 
-      <div className="my-2 w-full ">
+      <div className=" w-full ">
         <Sidebar />
       </div>
-      <main className="flex w-full flex-1 flex-col items-center bg-turbo-gray-500  px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-turbo-blue-600" href="https://nextjs.org">
-            helloPython!
-          </a>
-        </h1>
+      <main className="flex w-full flex-1 flex-col items-center bg-turbo-gray-500 px-2 text-center md:px-5">
+        <WebNavbar />
+        <ArticlesList />
       </main>
 
       <footer className="md:text-md flex h-6 w-full items-center justify-center border-t text-sm md:h-10">
