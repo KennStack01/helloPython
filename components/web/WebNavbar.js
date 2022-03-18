@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 const WebNavbar = () => {
   const router = useRouter()
   return (
-    <nav className="mx-auto flex w-full justify-around space-x-2 rounded-sm bg-white p-3 md:space-x-6">
+    <nav className="sticky top-0 z-20 mx-auto flex w-full justify-around space-x-1 rounded-sm bg-white px-2 py-3 md:space-x-6">
       <div>
         <Link href="/web/articles">
           <a

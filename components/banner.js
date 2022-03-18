@@ -7,7 +7,7 @@ import { BiDoorOpen } from 'react-icons/bi'
 
 const Banner = () => {
   return (
-    <div className="mx-auto flex w-full flex-row justify-between rounded-3xl bg-turbo-blue-500 py-5 px-4 text-white md:w-2/3 md:py-5">
+    <div className="mx-auto flex w-full flex-row justify-between rounded-md bg-turbo-blue-500 py-5 px-4 text-white md:w-2/3 md:rounded-3xl md:py-5">
       <div className="flex flex-row">
         <div className="mx-4 my-auto hidden md:block md:text-8xl">
           {' '}

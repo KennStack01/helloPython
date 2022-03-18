@@ -4,7 +4,7 @@ import Banner from '../Banner'
 
 const Index = () => {
   return (
-    <div className="mx-2 flex flex-col md:mx-auto">
+    <div className="mx-1 flex flex-col md:mx-auto">
       <Navbar />
       <Banner />
     </div>

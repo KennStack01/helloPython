@@ -5,7 +5,7 @@ const Article = ({ imageURL, title, link }) => {
     <a
       href={link}
       target="__blank"
-      className="group mx-auto flex cursor-pointer flex-col justify-between overflow-hidden"
+      className="group m-2 mx-auto flex cursor-pointer flex-col justify-between overflow-hidden rounded-md shadow-turbo-blue-500 hover:shadow-sm md:hover:shadow-md"
     >
       <img
         src={
@@ -17,10 +17,10 @@ const Article = ({ imageURL, title, link }) => {
             ? title
             : 'Python Pillow Image Designed and sold by Mostafaelbek on RedBubble'
         }
-        className="h-1/3 w-full rounded-md object-cover duration-200 ease-in-out group-hover:scale-105 group-hover:rounded-md group-hover:transition-transform"
+        className="h-36 w-full rounded-md object-cover duration-200 ease-in-out group-hover:scale-105 group-hover:rounded-md group-hover:transition-transform md:h-60"
       />
-      <div className="flex h-2/3 flex-col">
-        <h3 className="lg:text-md text-left text-xs font-semibold md:text-sm">
+      <div className="m-2 flex flex-col md:h-3/4">
+        <h3 className="text-left text-xs font-semibold md:text-justify md:text-lg">
           {title}
         </h3>
       </div>
