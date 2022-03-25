@@ -11,7 +11,7 @@ const WebNavbar = () => {
           <a
             className={`${
               router.pathname.includes('/web/articles') ||
-              router.pathname.includes('/')
+              router.pathname == '/'
                 ? 'active border-2 border-turbo-blue font-semibold text-black'
                 : ' border-turbo-gray-600 text-black hover:border-2 hover:shadow-sm'
             } my-1 rounded-sm p-2 text-xs font-semibold sm:text-sm md:text-lg`}
@@ -25,7 +25,7 @@ const WebNavbar = () => {
           <a
             className={`${
               router.pathname.includes('/web/videos')
-                ? 'active border-2 border-turbo-blue-500 font-semibold text-black'
+                ? 'active border-2 border-red-500 font-semibold text-black'
                 : ' border-turbo-gray-600 text-black hover:border-2 hover:shadow-sm'
             } my-1 rounded-sm p-2 text-xs font-semibold sm:text-sm md:text-lg`}
           >
@@ -34,10 +34,10 @@ const WebNavbar = () => {
         </Link>
       </div>
       <div>
-        <Link href="/web/videos">
+        <Link href="/web/websites">
           <a
             className={`${
-              router.pathname.includes('/web/videos')
+              router.pathname.includes('/web/websites')
                 ? 'active border-2 border-turbo-blue-500 font-semibold text-black'
                 : ' border-turbo-gray-600 text-black hover:border-2 hover:shadow-sm'
             }  my-1 rounded-sm  p-2 text-xs font-semibold sm:text-sm md:text-lg`}

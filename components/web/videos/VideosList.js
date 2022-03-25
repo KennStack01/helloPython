@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import keywords from '../keywords'
 import rssList from './rssList'
-import Article from './Article'
+import Video from './Video'
 import Parser from 'rss-parser'
 import InfiniteScroll from 'react-infinite-scroll-component'
 
-const ArticlesList = () => {
-  const [articles, setArticles] = useState([])
+const VideosList = () => {
+  const [videos, setVideos] = useState([])
   const [temp, setTemp] = useState([])
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(true)
@@ -32,16 +32,18 @@ const ArticlesList = () => {
     return array
   }
 
-  const fetchArticles = async (list) => {
+  const fetchvideos = async (list) => {
     let data = []
     for (let i = 0; i < list.length; i++) {
       const feed = await fetchSingleFeed(list[i])
       const filterdFeed = feed.items.filter((item) => {
         return keywords.some((keyword) => {
           return (
-            item.title.toLowerCase().includes(keyword) ||
-            item.content.toLowerCase().includes(keyword)
+            item.title.toLowerCase().includes(keyword) &&
+            !item.title.toLowerCase().includes('game' || 'games' || 'nlp')
           )
+          // ||
+          // item.content.toLowerCase().includes(keyword)
         })
       })
       data.push(filterdFeed)
@@ -50,55 +52,29 @@ const ArticlesList = () => {
     return data
   }
 
-  // const getOtherArticles = (array, limit) => {
-  //   let temp = []
-  //   if (array.length > limit) {
-  //     for (let i = 0; i < array.length; i++) {
-  //       for (let j = 0; j < articles.length; j++) {
-  //         if (array[i].title !== articles[j].title) {
-  //           temp = [...temp, array[i]].slice(0, limit)
-  //           // setArticles(temp)
-  //         }
-  //       }
-  //     }
-  //   }
-  //   return temp
-  // }
-  const getTenElements = (array, limit) => {
-    let temp = []
-    if (array.length > limit) {
-      for (let i = 0; i < array.length; i++) {
-        temp = [...temp, array[i]].slice(0, limit)
-      }
-    } else {
-      temp = array
-    }
-    return temp
-  }
-
-  const getMoreArticles = async () => {
-    fetchArticles(rssList)
+  const getMorevideos = async () => {
+    fetchvideos(rssList)
       .then((data) => {
         setData(data)
       })
       .then(() => {
         const merged = [].concat.apply([], data) // to merged all arrays within data
         const tempArray = shuffleArray(merged)
-        setArticles(tempArray.slice(0, 70))
+        setVideos(tempArray.slice(0, 80))
         setLoading(false)
         setShowBtn(true)
-        console.log('Articles: ', articles)
+        console.log('videos: ', merged)
       })
   }
 
   useEffect(() => {
-    getMoreArticles()
+    getMorevideos()
   }, [loading])
 
   return (
     <div>
       <div>
-        {loading && articles.length < 1 ? (
+        {loading && videos.length < 1 ? (
           <h3 className="text-md mx-auto my-10 text-center font-semibold md:my-20 md:text-xl">
             Loading...
           </h3>
@@ -109,33 +85,35 @@ const ArticlesList = () => {
                 type="text"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                placeholder={`Type and Search | Article Title or Blog's name`}
+                placeholder={`Type and Search | Video Title or Youtube Channel's Name`}
                 className="focus:ring-helloblue-400 sticky top-0 w-full rounded bg-white px-3 py-2 text-sm placeholder-gray-400 outline-none ring-1 ring-gray-300 focus:outline-none focus:ring-2"
               />
             </div>
             <div className="mx-auto grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-4 lg:grid-cols-4">
-              {articles
-                ?.filter((article) => {
+              {videos
+                ?.filter((video) => {
                   if (searchTerm === '') {
-                    return article
+                    return video
                   } else if (
-                    article.title
+                    video.title
                       .toLowerCase()
                       .includes(searchTerm.toString().toLowerCase().trim()) ||
-                    article.link
+                    video.link
                       .toLowerCase()
                       .includes(searchTerm.toString().toLowerCase().trim())
                   ) {
-                    return article
+                    return video
                   }
                 })
                 .sort((a, b) => b.pubDate - a.pubDate)
-                .map((article, index) => (
+                .map((video, index) => (
                   <div key={index}>
-                    <Article
-                      imageURL={article.thumbnail}
-                      title={article.title}
-                      link={article.link}
+                    <Video
+                      imageURL={`https://img.youtube.com/vi/${video.id.substring(
+                        9
+                      )}/hqdefault.jpg`}
+                      title={video.title}
+                      link={video.link}
                     />
                   </div>
                 ))}
@@ -143,16 +121,8 @@ const ArticlesList = () => {
           </div>
         )}
       </div>
-      {/* {showbtn && (
-        <button
-          onClick={() => getMoreArticles()}
-          className="mx-auto rounded-sm bg-turbo-blue-500 p-2 text-white"
-        >
-          Load More
-        </button>
-      )} */}
     </div>
   )
 }
 
-export default ArticlesList
+export default VideosList

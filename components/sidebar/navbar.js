@@ -4,13 +4,20 @@ import { useRouter } from 'next/router'
 
 const Navbar = () => {
   const router = useRouter()
+  const pathnames = [
+    '/',
+    '/web/articles',
+    '/web/videos',
+    '/web/websites',
+    '/web/e-books',
+  ]
 
   return (
     <div className="sticky top-0 my-1 flex flex-row justify-center space-x-4 bg-white p-2  font-semibold backdrop-blur-md backdrop-brightness-150">
       <Link href="/">
         <a
           className={`${
-            router.pathname == '/'
+            router.pathname.includes('/web/articles') || router.pathname == '/'
               ? 'active border-b-4 border-turbo-blue-500 font-semibold text-black'
               : ' text-black hover:border-turbo-gray-500 hover:shadow-sm'
           } my-1 rounded-sm p-2 text-sm font-semibold md:text-lg`}

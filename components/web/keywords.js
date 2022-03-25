@@ -7,6 +7,7 @@ const keywords = [
   'flask restful',
   'djangorestframework',
   'drf',
+  'python web',
 ]
 
 export default keywords

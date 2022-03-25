@@ -22,7 +22,7 @@ const Navbar = () => {
       <div className="my-auto mx-auto flex flex-row justify-between space-x-4">
         <div
           className={`${
-            router.pathname == '/'
+            router.pathname.includes('/web/videos') || router.pathname == '/'
               ? 'active bg-turbo-blue-500 font-semibold text-white shadow-sm'
               : ' text-black hover:bg-turbo-gray-500 hover:shadow-sm'
           } my-1 rounded-sm p-2`}
