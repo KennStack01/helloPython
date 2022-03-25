@@ -59,7 +59,7 @@ const WebNavbar = () => {
           </a>
         </Link>
       </div>
-      <div>
+      {/* <div>
         <Link href="/web/snippets">
           <a
             className={`${
@@ -71,7 +71,7 @@ const WebNavbar = () => {
             Snippets
           </a>
         </Link>
-      </div>
+      </div> */}
     </nav>
   )
 }
