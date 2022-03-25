@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Nav from '../../components/nav'
 import Sidebar from '../../components/sidebar'
 import WebNavbar from '../../components/web/WebNavbar'
-import WebsistesList from '../../components/web/Ebooks/EbooksList'
+import EBooksList from '../../components/web/Ebooks/EbooksList'
 
 const Ebooks = () => {
   return (
@@ -25,7 +25,7 @@ const Ebooks = () => {
       </div>
       <main className="flex w-full flex-1 flex-col items-center bg-turbo-gray-500 px-2 text-center md:px-5">
         <WebNavbar />
-        <WebsistesList />
+        <EBooksList />
       </main>
 
       <footer className="md:text-md flex h-6 w-full items-center justify-center border-t text-sm md:h-10">
