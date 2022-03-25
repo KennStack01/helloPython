@@ -3,5 +3,6 @@ let rssURLs = [
   'http://www.marinamele.com/feed',
   'https://www.revsys.com/blog/feeds/latest/',
   'https://simpleisbetterthancomplex.com/feed.xml',
+  'https://simpleisbetterthancomplex.com/feed.xml',
 ]
 export default rssURLs

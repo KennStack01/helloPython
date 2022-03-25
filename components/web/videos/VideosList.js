@@ -3,7 +3,9 @@ import keywords from '../keywords'
 import rssList from './rssList'
 import Video from './Video'
 import Parser from 'rss-parser'
-import InfiniteScroll from 'react-infinite-scroll-component'
+import { Link } from 'react-scroll'
+import { HideScroll } from 'react-hide-on-scroll'
+import { RiArrowUpCircleFill } from 'react-icons/ri'
 
 const VideosList = () => {
   const [videos, setVideos] = useState([])
@@ -40,7 +42,9 @@ const VideosList = () => {
         return keywords.some((keyword) => {
           return (
             item.title.toLowerCase().includes(keyword) &&
-            !item.title.toLowerCase().includes('game' || 'games' || 'nlp')
+            !item.title
+              .toLowerCase()
+              .includes('game' || 'games' || 'nlp' || 'machine learning')
           )
           // ||
           // item.content.toLowerCase().includes(keyword)
@@ -86,7 +90,7 @@ const VideosList = () => {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder={`Type and Search | Video Title or Youtube Channel's Name`}
-                className="focus:ring-helloblue-400 sticky top-0 w-full rounded bg-white px-3 py-2 text-sm placeholder-gray-400 outline-none ring-1 ring-gray-300 focus:outline-none focus:ring-2"
+                className="sticky top-0 w-full rounded bg-white px-3 py-2 text-sm placeholder-gray-400 outline-none ring-1 ring-gray-300 focus:outline-none focus:ring-2 focus:ring-turbo-blue-400"
               />
             </div>
             <div className="mx-auto grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-4 lg:grid-cols-4">
@@ -119,6 +123,26 @@ const VideosList = () => {
                 ))}
             </div>
           </div>
+        )}
+
+        {process.browser ? (
+          <HideScroll variant="down">
+            <Link
+              to="banner"
+              // to="MenuTab"
+              smooth={true}
+              duration={1000}
+              className="sticky bottom-4 flex flex-row justify-between"
+            >
+              <div></div>
+              <div></div>
+              <div className="z-50 flex w-14 cursor-pointer flex-row-reverse rounded-full bg-white font-semibold text-turbo-blue-600">
+                <RiArrowUpCircleFill className="mx-auto justify-items-center text-6xl" />
+              </div>
+            </Link>
+          </HideScroll>
+        ) : (
+          ''
         )}
       </div>
     </div>

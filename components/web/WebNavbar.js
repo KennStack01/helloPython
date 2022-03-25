@@ -38,7 +38,7 @@ const WebNavbar = () => {
           <a
             className={`${
               router.pathname.includes('/web/websites')
-                ? 'active border-2 border-turbo-blue-500 font-semibold text-black'
+                ? 'active border-2 border-gray-500 font-semibold text-black'
                 : ' border-turbo-gray-600 text-black hover:border-2 hover:shadow-sm'
             }  my-1 rounded-sm  p-2 text-xs font-semibold sm:text-sm md:text-lg`}
           >

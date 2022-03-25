@@ -3,7 +3,9 @@ import keywords from '../keywords'
 import rssList from './rssList'
 import Article from './Article'
 import Parser from 'rss-parser'
-import InfiniteScroll from 'react-infinite-scroll-component'
+import { Link } from 'react-scroll'
+import { HideScroll } from 'react-hide-on-scroll'
+import { RiArrowUpCircleFill } from 'react-icons/ri'
 
 const ArticlesList = () => {
   const [articles, setArticles] = useState([])
@@ -110,7 +112,7 @@ const ArticlesList = () => {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder={`Type and Search | Article Title or Blog's name`}
-                className="focus:ring-helloblue-400 sticky top-0 w-full rounded bg-white px-3 py-2 text-sm placeholder-gray-400 outline-none ring-1 ring-gray-300 focus:outline-none focus:ring-2"
+                className="sticky top-0 w-full rounded bg-white px-3 py-2 text-sm placeholder-gray-400 outline-none ring-1 ring-gray-300 focus:outline-none focus:ring-2 focus:ring-turbo-blue-400"
               />
             </div>
             <div className="mx-auto grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-4 lg:grid-cols-4">
@@ -141,6 +143,37 @@ const ArticlesList = () => {
                 ))}
             </div>
           </div>
+        )}
+        {process.browser ? (
+          <HideScroll variant="down">
+            <Link
+              to="banner"
+              // to="MenuTab"
+              smooth={true}
+              duration={1000}
+              className="sticky bottom-4 flex flex-row justify-between"
+            >
+              <div></div>
+              <div></div>
+              <div className="z-50 flex w-14 cursor-pointer flex-row-reverse rounded-full bg-white font-semibold text-turbo-blue-600">
+                <RiArrowUpCircleFill className="mx-auto justify-items-center text-6xl" />
+              </div>
+            </Link>
+          </HideScroll>
+        ) : (
+          // <div>
+          //   {/* <HideScroll variant="down">
+          //     <Link
+          //       to="Banner"
+          //       smooth={true}
+          //       duration={1000}
+          //       className=" z-30 bg-white text-gray-900 font-semibold hidden md:block sticky bottom-2 w-14 rounded-full cursor-pointer"
+          //     >
+          //       <RiArrowUpCircleFill className="text-6xl mx-auto justify-items-center" />
+          //     </Link>
+          //   </HideScroll> */}
+          // </div>
+          ''
         )}
       </div>
       {/* {showbtn && (
