@@ -9,7 +9,7 @@ const Website = ({ URL, name }) => {
     >
       <img
         src="/python-logo.svg"
-        className="md:w-18 my-auto w-12 rounded-full bg-white"
+        className="md:w-18 my-auto w-8 rounded-full bg-white"
         alt="helloPython logo"
       />
       <h3 className="my-auto text-xs font-semibold md:text-lg">{name}</h3>

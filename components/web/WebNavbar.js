@@ -47,10 +47,10 @@ const WebNavbar = () => {
         </Link>
       </div>
       <div>
-        <Link href="/web/websites">
+        <Link href="/web/ebooks">
           <a
             className={`${
-              router.pathname.includes('/web/websites')
+              router.pathname.includes('/web/ebooks')
                 ? 'active border-2 border-turbo-blue-500 font-semibold text-black'
                 : ' border-turbo-gray-600 text-black hover:border-2 hover:shadow-sm'
             } my-1 rounded-sm p-2 text-xs font-semibold sm:text-sm md:text-lg`}
@@ -60,10 +60,10 @@ const WebNavbar = () => {
         </Link>
       </div>
       <div>
-        <Link href="/web/ebooks">
+        <Link href="/web/snippets">
           <a
             className={`${
-              router.pathname.includes('/web/ebooks')
+              router.pathname.includes('/web/snippets')
                 ? 'active border-2 border-turbo-blue-500 font-semibold text-black'
                 : ' border-turbo-gray-600 text-black hover:border-2 hover:shadow-sm'
             } my-1 rounded-sm p-2 text-xs font-semibold sm:text-sm md:text-lg`}
