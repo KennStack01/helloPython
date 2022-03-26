@@ -13,7 +13,7 @@ const NewsNavbar = () => {
               router.pathname.includes('/web/news') &&
               !(
                 router.pathname.includes('/web/news/forums') ||
-                router.pathname.includes('/web/news/conferences/')
+                router.pathname.includes('/web/news/conferences')
               )
                 ? 'active border-2 border-turbo-blue font-semibold text-black'
                 : ' border-turbo-gray-600 text-black hover:border-2 hover:shadow-sm'
