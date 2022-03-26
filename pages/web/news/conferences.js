@@ -2,8 +2,8 @@
 import Head from 'next/head'
 import Nav from '../../../components/nav'
 import Sidebar from '../../../components/sidebar'
+import ConferencesList from '../../../components/web/news/conferences/ConferencesList'
 import NewsNavbar from '../../../components/web/NewsNavbar'
-import ConferencesList from '../../../components/web/news/Conferences/ConferencesList'
 
 const Conferences = () => {
   return (
