@@ -29,7 +29,7 @@ const News = ({ imageURL, title, link }) => {
         ''
       )}
       <div className="m-2 my-3 flex flex-col md:h-3/4">
-        <h3 className="text-left text-xs font-semibold md:text-justify md:text-lg">
+        <h3 className="text-left text-xs font-semibold text-gray-700 md:text-justify md:text-lg">
           {title}
         </h3>
       </div>

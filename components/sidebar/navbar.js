@@ -10,7 +10,9 @@ const Navbar = () => {
       <Link href="/">
         <a
           className={`${
-            router.pathname == '/' || router.pathname.includes('/web')
+            router.pathname == '/' &&
+            (!router.pathname.includes('/web/news') ||
+              !router.pathname.includes('/web/resources'))
               ? 'active border-b-4 border-turbo-blue-500 font-semibold text-black'
               : ' text-black hover:border-turbo-gray-500 hover:shadow-sm'
           } my-1 rounded-sm p-2 text-sm font-semibold md:text-lg`}

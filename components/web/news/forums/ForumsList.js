@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react'
-import keywords from '../keywords'
-import rssList from './rssList'
+import React, { useEffect, useState } from 'react'
+import Forum from './Forum'
 import Parser from 'rss-parser'
+import rssList from './rssList'
+import keywords from '../../keywords'
+import { RiArrowUpCircleFill } from 'react-icons/ri'
 import { Link } from 'react-scroll'
 import { HideScroll } from 'react-hide-on-scroll'
-import { RiArrowUpCircleFill } from 'react-icons/ri'
-import News from './News'
 
-const NewsList = () => {
-  const [news, setNews] = useState([])
+const ForumsList = () => {
+  const [forums, setForums] = useState([])
   const [temp, setTemp] = useState([])
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(true)
@@ -34,7 +34,7 @@ const NewsList = () => {
     return array
   }
 
-  const fetchNews = async (list) => {
+  const fetchforums = async (list) => {
     let data = []
     for (let i = 0; i < list.length; i++) {
       const feed = await fetchSingleFeed(list[i])
@@ -52,80 +52,69 @@ const NewsList = () => {
     return data
   }
 
-  //   const getTenElements = (array, limit) => {
-  //     let temp = []
-  //     if (array.length > limit) {
-  //       for (let i = 0; i < array.length; i++) {
-  //         temp = [...temp, array[i]].slice(0, limit)
-  //       }
-  //     } else {
-  //       temp = array
-  //     }
-  //     return temp
-  //   }
-
-  const getMoreNews = async () => {
-    fetchNews(rssList)
+  const getMoreforums = async () => {
+    fetchforums(rssList)
       .then((data) => {
         setData(data)
       })
       .then(() => {
         const merged = [].concat.apply([], data) // to merged all arrays within data
-        const tempArray = shuffleArray(merged)
-        setNews(tempArray.slice(0, 70))
+        // const tempArray = shuffleArray(merged)
+        setForums(merged.slice(0, 30))
         setLoading(false)
         setShowBtn(true)
-        console.log('news: ', news)
+        console.log('forums: ', forums)
       })
   }
 
   useEffect(() => {
-    getMoreNews()
+    getMoreforums()
   }, [loading])
 
   return (
     <div>
       <div>
-        {loading && news.length < 1 ? (
-          <h3 className="text-md mx-auto my-10 text-center font-semibold md:my-20 md:text-xl">
-            Loading...
-          </h3>
+        {loading ? (
+          <div>
+            <h1 className="text-md mx-auto my-10 text-center font-semibold md:my-20 md:text-xl">
+              Loading...
+            </h1>
+          </div>
         ) : (
           <div>
-            <div className=" mx-2 my-2 md:mx-20 md:mb-4 md:mt-2">
+            <div className=" mx-2 my-2 md:mx-40 md:mb-4 md:mt-2">
               <input
                 type="text"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                placeholder={`Type and Search | News Title or Blog's name`}
+                placeholder={`Type and Search | Keywords`}
                 className="sticky top-0 w-full rounded bg-white px-3 py-2 text-sm placeholder-gray-400 outline-none ring-1 ring-gray-300 focus:outline-none focus:ring-2 focus:ring-turbo-blue-400"
               />
             </div>
-            <div className="mx-auto grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-4 lg:grid-cols-4">
-              {news
-                ?.filter((article) => {
+            <div className="mx-auto grid grid-cols-1 gap-2 md:grid-cols-3 md:gap-4 lg:grid-cols-4">
+              {forums
+                .filter((forum) => {
                   if (searchTerm === '') {
-                    return article
+                    return forum
                   } else if (
-                    article.title
+                    forum.title
                       .toLowerCase()
                       .includes(searchTerm.toString().toLowerCase().trim()) ||
-                    article.link
+                    forum.link
                       .toLowerCase()
                       .includes(searchTerm.toString().toLowerCase().trim())
                   ) {
-                    return article
+                    return Forum
                   }
                 })
-                .sort((a, b) => b.pubDate - a.pubDate)
-                .map((article, index) => (
-                  <div key={index}>
-                    <News
-                      imageURL={article.thumbnail}
-                      title={article.title}
-                      link={article.link}
-                    />
-                  </div>
+                .sort((a, b) => a.pubDate - b.pubDate)
+                .map((forum) => (
+                  <Forum
+                    key={forum.id}
+                    title={forum.title}
+                    pubDate={forum.pubDate}
+                    link={forum.link}
+                  />
                 ))}
             </div>
           </div>
@@ -134,14 +123,13 @@ const NewsList = () => {
           <HideScroll variant="down">
             <Link
               to="banner"
-              // to="MenuTab"
               smooth={true}
               duration={1000}
               className="sticky bottom-4 flex flex-row justify-between"
             >
               <div></div>
               <div></div>
-              <div className="z-50 flex w-14 cursor-pointer flex-row-reverse rounded-full bg-white font-semibold text-turbo-blue-600">
+              <div className="z-50 flex w-14 cursor-pointer flex-row-reverse rounded-full bg-white font-semibold text-turbo-blue-700">
                 <RiArrowUpCircleFill className="mx-auto justify-items-center text-6xl" />
               </div>
             </Link>
@@ -154,4 +142,4 @@ const NewsList = () => {
   )
 }
 
-export default NewsList
+export default ForumsList

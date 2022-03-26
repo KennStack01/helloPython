@@ -3,7 +3,6 @@ import Head from 'next/head'
 import Nav from '../../../components/nav'
 import Sidebar from '../../../components/sidebar'
 import NewsNavbar from '../../../components/web/NewsNavbar'
-import ArticlesList from '../../../components/web/articles/ArticlesList'
 import NewsList from '../../../components/web/news/NewsList'
 
 const Home = () => {
