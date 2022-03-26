@@ -2,8 +2,9 @@
 import Head from 'next/head'
 import Nav from '../../components/nav'
 import Sidebar from '../../components/sidebar'
+import EBooksList from '../../components/web/ebooks/EbooksList'
 import WebNavbar from '../../components/web/WebNavbar'
-import EBooksList from '../../components/web/Ebooks/EbooksList'
+// import EBooksList from '../../components/web/Ebooks/EbooksList'
 
 const Ebooks = () => {
   return (

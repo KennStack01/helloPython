@@ -7,7 +7,7 @@ const Forum = ({ title, pubDate, link }) => {
   const dateToFormat = new Date(pubDate)
 
   return (
-    <div className="m-2 flex flex-col rounded-l-md border-l-2 border-red-400 p-2 text-gray-800 shadow-sm shadow-red-400 hover:border hover:shadow-md md:m-3 md:rounded-lg md:p-3">
+    <div className="m-2 flex flex-col rounded-l-md border-l-2 border-red-400 bg-white p-2 text-gray-800 shadow-sm shadow-red-400 hover:border hover:shadow-md md:m-3 md:rounded-lg md:p-3">
       <a href={`${link}`} target="__blank" className="flex flex-col">
         <div className="mx-auto text-5xl" style={{ color: '#ff4301' }}>
           <SiReddit />
