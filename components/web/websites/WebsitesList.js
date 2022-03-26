@@ -67,12 +67,8 @@ const WebsistesList = () => {
                     return website
                   }
                 })
-                .map((website) => (
-                  <Website
-                    key={website}
-                    URL={website.url}
-                    name={website.name}
-                  />
+                .map((website, index) => (
+                  <Website key={index} URL={website.url} name={website.name} />
                 ))}
             </div>
           </div>

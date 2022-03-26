@@ -5,11 +5,11 @@ import { ImBook } from 'react-icons/im'
 // This is the EBook Component
 const EBook = ({ pictureURL, title, pubDate, link, author, isFree }) => {
   return (
-    <div className="mx-2">
+    <div className="group mx-2 overflow-hidden">
       <section className="bg-mirage-400 h-76 w-6/7 container m-auto my-4 flex flex-col rounded-lg shadow hover:shadow-sm md:h-80">
         <div>
           <img
-            className="image-video h-40 w-full rounded-t-lg object-cover object-center md:h-48"
+            className="image-video h-40 w-full rounded-md rounded-t-lg object-cover object-center duration-300 ease-in-out group-hover:scale-110 group-hover:rounded-md group-hover:transition-transform md:h-48"
             src={pictureURL}
             alt="Book Cover Image"
           />
@@ -23,7 +23,7 @@ const EBook = ({ pictureURL, title, pubDate, link, author, isFree }) => {
             free
           </p>
         </div>
-        <div className="m-auto mx-2 flex-grow text-center text-gray-700">
+        <div className="my-2 mx-2 flex-grow text-center text-gray-700">
           <div>
             <a
               href={`${link}`}

@@ -1,18 +1,15 @@
 // import type { NextPage } from 'next'
 import Head from 'next/head'
-import Link from 'next/link'
-import Image from 'next/image'
-import Navbar from '../components/Navbar'
-import Nav from '../components/nav'
-import Sidebar from '../components/sidebar'
-import WebNavbar from '../components/web/WebNavbar'
-import ArticlesList from '../components/web/articles/ArticlesList'
+import Nav from '../../components/nav'
+import Sidebar from '../../components/sidebar'
+import WebNavbar from '../../components/web/WebNavbar'
+import EBooksList from '../../components/web/Ebooks/EbooksList'
 
-const Home = () => {
+const Ebooks = () => {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
       <Head>
-        <title>HelloPython | Home</title>
+        <title>HelloPython | Ebooks</title>
         <link rel="icon" href="/favicon.svg" />
       </Head>
 
@@ -26,7 +23,7 @@ const Home = () => {
       </div>
       <main className="flex w-full flex-1 flex-col items-center bg-turbo-gray-500 px-2 text-center md:px-5">
         <WebNavbar />
-        <ArticlesList />
+        <EBooksList />
       </main>
 
       <footer className="md:text-md flex h-6 w-full items-center justify-center border-t text-sm md:h-10">
@@ -46,4 +43,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Ebooks

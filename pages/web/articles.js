@@ -1,8 +1,5 @@
 // import type { NextPage } from 'next'
 import Head from 'next/head'
-import Link from 'next/link'
-import Image from 'next/image'
-import Navbar from '../../components/Navbar'
 import Nav from '../../components/nav'
 import Sidebar from '../../components/sidebar'
 import WebNavbar from '../../components/web/WebNavbar'

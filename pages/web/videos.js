@@ -1,17 +1,15 @@
 // import type { NextPage } from 'next'
 import Head from 'next/head'
-import Link from 'next/link'
-import Image from 'next/image'
 import Nav from '../../components/nav'
 import Sidebar from '../../components/sidebar'
 import WebNavbar from '../../components/web/WebNavbar'
-import EBooksList from '../../components/web/Ebooks/EbooksList'
+import VideosList from '../../components/web/videos/VideosList'
 
-const Ebooks = () => {
+const Videos = () => {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
       <Head>
-        <title>HelloPython | Ebooks</title>
+        <title>HelloPython | Videos</title>
         <link rel="icon" href="/favicon.svg" />
       </Head>
 
@@ -25,7 +23,7 @@ const Ebooks = () => {
       </div>
       <main className="flex w-full flex-1 flex-col items-center bg-turbo-gray-500 px-2 text-center md:px-5">
         <WebNavbar />
-        <EBooksList />
+        <VideosList />
       </main>
 
       <footer className="md:text-md flex h-6 w-full items-center justify-center border-t text-sm md:h-10">
@@ -45,4 +43,4 @@ const Ebooks = () => {
   )
 }
 
-export default Ebooks
+export default Videos

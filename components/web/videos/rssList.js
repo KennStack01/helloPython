@@ -5,6 +5,7 @@ let rssURLs = [
   'https://www.youtube.com/feeds/videos.xml?channel_id=UC8butISFwT-Wl7EV0hUK0BQ',
   'https://www.youtube.com/feeds/videos.xml?channel_id=UCU8d7rcShA7MGuDyYH1aWGg',
   'https://www.youtube.com/feeds/videos.xml?channel_id=UCTZRcDjjkVajGL6wd76UnGg',
+  'https://www.youtube.com/feeds/videos.xml?channel_id=UCfVoYvY8BfTDeF63JQmQJvg',
 
   // Playlists
   // 'https://www.youtube.com/feeds/videos.xml?playlist_id=PLzMcBGfZo4-kQkZp-j9PNyKq7Yw5VYjq9',
