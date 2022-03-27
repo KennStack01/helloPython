@@ -26,7 +26,7 @@ const Resources = () => {
           help helloPython to become one of the largest Python Resources
           Websites 😍
         </h1>
-        <p className="mt-2 font-bold">Add Resource 👇</p>
+        <p className="mt-2 font-bold">Add Web Resource 👇</p>
         {/* Form here */}
         <Form />
       </main>

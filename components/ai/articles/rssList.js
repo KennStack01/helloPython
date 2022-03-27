@@ -1,9 +1,8 @@
 let rssURLs = [
-  'http://www.marinamele.com/feed',
-  'https://www.revsys.com/blog/feeds/latest/',
-  'https://simpleisbetterthancomplex.com/feed.xml',
-  'https://djangotherightway.com/rss.xml',
-  'https://codewithkenn.hashnode.dev/rss.xml',
-  'https://python.plainenglish.io/feed',
+  'https://www.mygreatlearning.com/blog/feed/',
+  'https://machinelearningmastery.com/feed/',
+  'https://eugeneyan.com/rss/',
+  'https://victorzhou.com/rss.xml',
+  'https://koaning.io/index.xml',
 ]
 export default rssURLs

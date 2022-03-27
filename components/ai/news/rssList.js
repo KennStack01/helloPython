@@ -1,6 +1,6 @@
 let rssURLs = [
-  'https://www.djangoproject.com/rss/community/blogs/',
-  'https://django-news.com/issues.rss',
-  'https://www.infoworld.com/category/python/index.rss',
+  'http://machinelearningmastery.com/blog/feed',
+  'https://openai.com/blog/rss/',
+  'https://machinelearningmastery.com/feed/',
 ]
 export default rssURLs

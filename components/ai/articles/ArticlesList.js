@@ -42,7 +42,8 @@ const ArticlesList = () => {
         return keywords.some((keyword) => {
           return (
             item.title.toLowerCase().includes(keyword) ||
-            item.content?.toLowerCase().includes(keyword)
+            item.content?.toLowerCase().includes(keyword) ||
+            item.link?.toLowerCase().includes(keyword)
           )
         })
       })

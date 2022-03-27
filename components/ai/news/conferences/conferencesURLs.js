@@ -1,23 +1,27 @@
 let conferencesURLs = [
   {
-    name: 'DjangoCon US',
-    url: 'https://2021.djangocon.us/',
+    name: 'ML Conf',
+    url: 'https://mlconf.com/event/mlconf-nyc/',
   },
   {
-    name: 'DjangoCon EU',
-    url: 'https://2022.djangocon.eu/',
+    name: 'World Summit AI Americas 2022',
+    url: 'https://americas.worldsummit.ai/',
   },
   {
-    name: 'Django Girls',
-    url: 'https://djangogirls.org/en/events/',
+    name: 'Machine Learning Prague 2022',
+    url: 'https://mlprague.com/',
   },
   {
-    name: 'PyCon',
-    url: 'https://us.pycon.org/2022/',
+    name: 'The AI Summit London 2022',
+    url: 'https://london.theaisummit.com/',
   },
   {
-    name: 'PyCon',
-    url: 'https://us.pycon.org/2022/',
+    name: 'Deep Learning World',
+    url: 'https://www.deeplearningworld.com/',
+  },
+  {
+    name: 'INTERSPEECH 2022',
+    url: 'https://interspeech2022.org/',
   },
 ]
 export default conferencesURLs

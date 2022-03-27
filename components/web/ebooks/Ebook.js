@@ -6,7 +6,7 @@ import { ImBook } from 'react-icons/im'
 const EBook = ({ pictureURL, title, pubDate, link, author, isFree }) => {
   return (
     <div className="group mx-2 overflow-hidden">
-      <section className="bg-mirage-400 h-76 w-6/7 container m-auto my-4 flex flex-col rounded-lg shadow hover:shadow-sm md:h-80">
+      <section className="h-76 w-6/7 container m-auto my-4 flex flex-col rounded-lg bg-white shadow hover:shadow-sm md:h-80">
         <div>
           <img
             className="image-video h-40 w-full rounded-md rounded-t-lg object-cover object-center duration-300 ease-in-out group-hover:scale-110 group-hover:rounded-md group-hover:transition-transform md:h-48"

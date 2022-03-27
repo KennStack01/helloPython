@@ -42,9 +42,7 @@ const VideosList = () => {
         return keywords.some((keyword) => {
           return (
             item.title.toLowerCase().includes(keyword) &&
-            !item.title
-              .toLowerCase()
-              .includes('game' || 'games' || 'nlp' || 'machine learning')
+            !item.title.toLowerCase().includes('html')
           )
           // ||
           // item.content.toLowerCase().includes(keyword)

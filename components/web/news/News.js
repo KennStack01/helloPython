@@ -10,7 +10,7 @@ const News = ({ imageURL, title, link }) => {
       target="__blank"
       onMouseEnter={() => setShowBtn(true)}
       onMouseLeave={() => setShowBtn(false)}
-      className="group relative m-2 mx-auto flex cursor-pointer flex-col justify-between overflow-hidden pb-4 shadow-turbo-blue-500 hover:shadow-sm md:hover:shadow-md"
+      className="group relative m-2 mx-auto flex cursor-pointer flex-col justify-between overflow-hidden bg-white pb-4 shadow-turbo-blue-500 hover:shadow-sm md:hover:shadow-md"
     >
       <img
         src={

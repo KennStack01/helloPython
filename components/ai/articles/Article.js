@@ -10,13 +10,9 @@ const Article = ({ imageURL, title, link }) => {
       <img
         src={
           imageURL ||
-          'https://ih1.redbubble.net/image.2807627365.8890/throwpillow,small,600x-bg,f8f8f8-c,0,120,600,600.u1.jpg'
+          'https://scriptalldna.com/insights/wp-content/uploads/2018/11/AI_Animated.gif'
         }
-        alt={
-          imageURL
-            ? title
-            : 'Python Pillow Image Designed and sold by Mostafaelbek on RedBubble'
-        }
+        alt={imageURL ? title : 'AI Gif by ScriptAllDNA'}
         className="h-36 w-full overflow-hidden rounded-md object-cover duration-300 ease-in-out group-hover:scale-110 group-hover:rounded-md group-hover:transition-transform md:h-60"
       />
       <div className="m-2 my-3 flex flex-col md:h-3/4">

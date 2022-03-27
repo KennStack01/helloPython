@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
       <Head>
-        <title>HelloPython | Home</title>
+        <title>Python AI | Home</title>
         <link rel="icon" href="/favicon.svg" />
       </Head>
 
