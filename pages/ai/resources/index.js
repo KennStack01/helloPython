@@ -3,13 +3,13 @@ import Head from 'next/head'
 import Nav from '../../../components/nav'
 import Sidebar from '../../../components/sidebar'
 import NewsNavbar from '../../../components/web/NewsNavbar'
-import NewsList from '../../../components/web/news/NewsList'
+import Form from '../../../components/web/resources/Form'
 
-const Home = () => {
+const Resources = () => {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
       <Head>
-        <title>HelloPython | News</title>
+        <title>HelloPython | Resources</title>
         <link rel="icon" href="/favicon.svg" />
       </Head>
 
@@ -22,8 +22,13 @@ const Home = () => {
         <Sidebar />
       </div>
       <main className="flex w-full flex-1 flex-col items-center bg-turbo-gray-500 px-2 text-center md:px-5">
-        <NewsNavbar />
-        <NewsList />
+        <h1 className="mx-auto my-2 bg-white p-2 text-sm font-semibold md:text-lg">
+          help helloPython to become one of the largest Python Resources
+          Websites 😍
+        </h1>
+        <p className="mt-2 font-bold">Add Resource 👇</p>
+        {/* Form here */}
+        <Form />
       </main>
 
       <footer className="md:text-md flex h-6 w-full items-center justify-center border-t text-sm md:h-10">
@@ -43,4 +48,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Resources

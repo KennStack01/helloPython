@@ -1,15 +1,15 @@
 // import type { NextPage } from 'next'
 import Head from 'next/head'
-import Nav from '../../../components/nav'
-import Sidebar from '../../../components/sidebar'
-import NewsNavbar from '../../../components/web/NewsNavbar'
-import NewsList from '../../../components/web/news/NewsList'
+import Nav from '../../components/nav'
+import Sidebar from '../../components/sidebar'
+import WebNavbar from '../../components/ai/WebNavbar'
+import ArticlesList from '../../components/ai/articles/ArticlesList'
 
 const Home = () => {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
       <Head>
-        <title>HelloPython | News</title>
+        <title>HelloPython | Home</title>
         <link rel="icon" href="/favicon.svg" />
       </Head>
 
@@ -22,8 +22,8 @@ const Home = () => {
         <Sidebar />
       </div>
       <main className="flex w-full flex-1 flex-col items-center bg-turbo-gray-500 px-2 text-center md:px-5">
-        <NewsNavbar />
-        <NewsList />
+        <WebNavbar />
+        <ArticlesList />
       </main>
 
       <footer className="md:text-md flex h-6 w-full items-center justify-center border-t text-sm md:h-10">

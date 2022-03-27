@@ -23,7 +23,7 @@ export default function Developer() {
             </h1>
             <p className="mb-2 text-xs text-gray-500">
               {' '}
-              Software Developer and Indie Maker{' '}
+              Software Developer & Indie Maker{' '}
             </p>
           </div>
         </div>

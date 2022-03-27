@@ -2,7 +2,6 @@
 import Head from 'next/head'
 import Nav from '../components/nav'
 import Sidebar from '../components/sidebar'
-import NewsNavbar from '../components/web/NewsNavbar'
 import Form from '../components/Sponsor/Form'
 
 const Sponsor = () => {
@@ -27,7 +26,6 @@ const Sponsor = () => {
           😍
         </h1>
         <p className="mt-2 font-bold">Let's Connect 👇</p>
-        {/* Form here */}
         <Form />
       </main>
 
