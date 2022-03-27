@@ -54,7 +54,7 @@ const Banner = () => {
           </div>
         </div>
       </div>
-      <Link href="/adsBanner">
+      <Link href="/sponsor">
         <a className="flex cursor-pointer flex-col place-content-end rounded-3xl bg-turbo-blue-600 py-4 px-4 md:py-10 md:px-8">
           <p className="md:text-md text-xs md:italic">Sponsor Space</p>
           <h2 className="md:text-md mb-4 text-center text-xs font-bold">

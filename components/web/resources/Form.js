@@ -13,7 +13,7 @@ const Form = () => {
               <input
                 type="hidden"
                 name="_subject"
-                value="Python WEB - Resource"
+                value="Resources - helloPython WEB"
               />
               <input
                 type="hidden"
