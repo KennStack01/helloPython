@@ -4,6 +4,10 @@ let websitesURLs = [
     url: 'https://www.mygreatlearning.com/blog/',
   },
   {
+    name: 'FreeCodeCamp ML Course',
+    url: 'https://www.freecodecamp.org/learn/machine-learning-with-python/',
+  },
+  {
     name: 'Python Programming',
     url: 'https://pythonprogramming.net/',
   },
