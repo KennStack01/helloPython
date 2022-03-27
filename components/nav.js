@@ -35,7 +35,7 @@ const Navbar = () => {
           </Link>
         </div>
         <div>
-          <Link href="/">
+          <Link href="/ai">
             <a
               className={`${
                 router.pathname.includes('/ai')

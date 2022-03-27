@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 import Nav from '../../components/nav'
-import Sidebar from '../../components/sidebar'
+import Sidebar from '../../components/sidebar/web'
 import WebNavbar from '../../components/web/WebNavbar'
 import WebsistesList from '../../components/web/websites/WebsitesList'
 

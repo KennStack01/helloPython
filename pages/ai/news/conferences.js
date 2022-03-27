@@ -1,9 +1,9 @@
 // import type { NextPage } from 'next'
 import Head from 'next/head'
 import Nav from '../../../components/nav'
-import Sidebar from '../../../components/sidebar'
-import ConferencesList from '../../../components/web/news/conferences/ConferencesList'
-import NewsNavbar from '../../../components/web/NewsNavbar'
+import Sidebar from '../../../components/sidebar/ai'
+import ConferencesList from '../../../components/ai/news/conferences/ConferencesList'
+import NewsNavbar from '../../../components/ai/NewsNavbar'
 
 const Conferences = () => {
   return (

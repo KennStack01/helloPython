@@ -1,6 +1,6 @@
 import React from 'react'
 import Banner from '../banner'
-import Navbar from './navbar'
+import Navbar from './navbarForWeb'
 
 const Index = () => {
   return (

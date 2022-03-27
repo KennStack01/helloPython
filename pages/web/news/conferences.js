@@ -1,7 +1,7 @@
 // import type { NextPage } from 'next'
 import Head from 'next/head'
 import Nav from '../../../components/nav'
-import Sidebar from '../../../components/sidebar'
+import Sidebar from '../../../components/sidebar/web'
 import ConferencesList from '../../../components/web/news/conferences/ConferencesList'
 import NewsNavbar from '../../../components/web/NewsNavbar'
 

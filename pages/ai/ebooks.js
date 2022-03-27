@@ -1,16 +1,16 @@
 // import type { NextPage } from 'next'
 import Head from 'next/head'
 import Nav from '../../components/nav'
-import Sidebar from '../../components/sidebar'
-import EBooksList from '../../components/web/ebooks/EbooksList'
-import WebNavbar from '../../components/web/WebNavbar'
+import Sidebar from '../../components/sidebar/ai'
+import EBooksList from '../../components/ai/ebooks/EbooksList'
+import AINavbar from '../../components/ai/AINavbar'
 // import EBooksList from '../../components/web/Ebooks/EbooksList'
 
 const Ebooks = () => {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
       <Head>
-        <title>HelloPython | Ebooks</title>
+        <title>Python AI | Ebooks</title>
         <link rel="icon" href="/favicon.svg" />
       </Head>
 
@@ -23,7 +23,7 @@ const Ebooks = () => {
         <Sidebar />
       </div>
       <main className="flex w-full flex-1 flex-col items-center bg-turbo-gray-500 px-2 text-center md:px-5">
-        <WebNavbar />
+        <AINavbar />
         <EBooksList />
       </main>
 

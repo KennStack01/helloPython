@@ -1,15 +1,15 @@
 // import type { NextPage } from 'next'
 import Head from 'next/head'
 import Nav from '../../../components/nav'
-import Sidebar from '../../../components/sidebar'
-import NewsNavbar from '../../../components/web/NewsNavbar'
-import ForumsList from '../../../components/web/news/forums/ForumsList'
+import Sidebar from '../../../components/sidebar/ai'
+import NewsNavbar from '../../../components/ai/NewsNavbar'
+import ForumsList from '../../../components/ai/news/forums/ForumsList'
 
 const Forums = () => {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
       <Head>
-        <title>HelloPython | News</title>
+        <title>Python AI | News</title>
         <link rel="icon" href="/favicon.svg" />
       </Head>
 

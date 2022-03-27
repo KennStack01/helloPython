@@ -1,15 +1,14 @@
 // import type { NextPage } from 'next'
 import Head from 'next/head'
 import Nav from '../../../components/nav'
-import Sidebar from '../../../components/sidebar'
-import NewsNavbar from '../../../components/web/NewsNavbar'
-import Form from '../../../components/web/resources/Form'
+import Sidebar from '../../../components/sidebar/ai'
+import Form from '../../../components/ai/resources/Form'
 
 const Resources = () => {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
       <Head>
-        <title>HelloPython | Resources</title>
+        <title>Python AI | Resources</title>
         <link rel="icon" href="/favicon.svg" />
       </Head>
 
