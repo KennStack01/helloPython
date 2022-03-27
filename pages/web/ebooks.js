@@ -10,7 +10,7 @@ const Ebooks = () => {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
       <Head>
-        <title>HelloPython | Ebooks</title>
+        <title>Python Web | Ebooks</title>
         <link rel="icon" href="/favicon.svg" />
       </Head>
 

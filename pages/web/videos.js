@@ -9,7 +9,7 @@ const Videos = () => {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
       <Head>
-        <title>HelloPython | Videos</title>
+        <title>Python Web | Videos</title>
         <link rel="icon" href="/favicon.svg" />
       </Head>
 

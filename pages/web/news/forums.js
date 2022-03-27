@@ -9,7 +9,7 @@ const Forums = () => {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
       <Head>
-        <title>HelloPython | News</title>
+        <title>Python Web | News</title>
         <link rel="icon" href="/favicon.svg" />
       </Head>
 

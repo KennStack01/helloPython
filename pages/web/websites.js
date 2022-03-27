@@ -11,7 +11,7 @@ const Websites = () => {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
       <Head>
-        <title>HelloPython | Websites</title>
+        <title>Python Web | Websites</title>
         <link rel="icon" href="/favicon.svg" />
       </Head>
 

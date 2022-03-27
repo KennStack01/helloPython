@@ -9,7 +9,7 @@ const Conferences = () => {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
       <Head>
-        <title>HelloPython | Conferences</title>
+        <title>Python Web | Conferences</title>
         <link rel="icon" href="/favicon.svg" />
       </Head>
 
