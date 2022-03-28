@@ -7,7 +7,7 @@ const Navbar = () => {
 
   return (
     <div className="sticky top-0 my-1 flex flex-row justify-center space-x-4 bg-white p-2  font-semibold backdrop-blur-md backdrop-brightness-150">
-      <Link href="/">
+      <Link href="/ai">
         <a
           className={`${
             router.pathname == '/ai' ||

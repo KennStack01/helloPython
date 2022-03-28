@@ -1,7 +1,7 @@
 let websitesURLs = [
   {
-    name: 'FreeCodeCamp',
-    url: 'https://www.freecodecamp.org/',
+    name: 'Django Rest Framework',
+    url: 'https://www.django-rest-framework.org/',
   },
   {
     name: 'Django Project',
