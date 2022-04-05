@@ -4,5 +4,6 @@ let rssURLs = [
   'https://eugeneyan.com/rss/',
   'https://victorzhou.com/rss.xml',
   'https://koaning.io/index.xml',
+  'https://www.freecodecamp.org/news/rss/'
 ]
 export default rssURLs
