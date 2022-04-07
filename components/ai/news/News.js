@@ -15,9 +15,9 @@ const News = ({ imageURL, title, link }) => {
       <img
         src={
           imageURL ||
-          'https://media4.giphy.com/media/PjJ1cLHqLEveXysGDB/200w.webp?cid=ecf05e47xhewcwojzog1edx798hsmou75x63btwnrcpfhoqf&rid=200w.webp&ct=g'
+          'https://cdn.dribbble.com/users/2208826/screenshots/6286951/guanxian.gif'
         }
-        alt={imageURL ? title : 'AI GIF by Giphy'}
+        alt={imageURL ? title : 'AI GIF by Afroman'}
         className="h-36 w-full overflow-hidden object-cover duration-300 ease-in-out group-hover:scale-110 group-hover:rounded-md group-hover:transition-transform md:h-60"
       />
       {showBtn ? (

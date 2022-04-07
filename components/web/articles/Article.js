@@ -9,13 +9,12 @@ const Article = ({ imageURL, title, link }) => {
     >
       <img
         src={
-          imageURL ||
-          'https://ih1.redbubble.net/image.2807627365.8890/throwpillow,small,600x-bg,f8f8f8-c,0,120,600,600.u1.jpg'
+          imageURL || 'https://media.giphy.com/media/L8K62iTDkzGX6/giphy.gif'
+          // 'https://ih1.redbubble.net/image.2807627365.8890/throwpillow,small,600x-bg,f8f8f8-c,0,120,600,600.u1.jpg'
         }
         alt={
-          imageURL
-            ? title
-            : 'Python Pillow Image Designed and sold by Mostafaelbek on RedBubble'
+          imageURL ? title : 'Coding gif from Giphy by @giphy'
+          // : 'Python Pillow Image Designed and sold by Mostafaelbek on RedBubble'
         }
         className="h-36 w-full overflow-hidden rounded-md object-cover duration-300 ease-in-out group-hover:scale-110 group-hover:rounded-md group-hover:transition-transform md:h-60"
       />

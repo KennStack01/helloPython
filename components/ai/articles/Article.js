@@ -10,10 +10,10 @@ const Article = ({ imageURL, title, link }) => {
       <img
         src={
           imageURL ||
-          'https://scriptalldna.com/insights/wp-content/uploads/2018/11/AI_Animated.gif'
+          'https://media.giphy.com/media/7VzgMsB6FLCilwS30v/giphy.gif'
         }
-        alt={imageURL ? title : 'AI Gif by ScriptAllDNA'}
-        className="h-36 w-full overflow-hidden rounded-md object-cover duration-300 ease-in-out group-hover:scale-110 group-hover:rounded-md group-hover:transition-transform md:h-60"
+        alt={imageURL ? title : 'AI Gif by giphy'}
+        className="h-36 w-full overflow-hidden rounded-md object-cover text-xs duration-300 ease-in-out group-hover:scale-110 group-hover:rounded-md group-hover:transition-transform md:h-60"
       />
       <div className="m-2 my-3 flex flex-col md:h-3/4">
         <h3 className="text-left text-xs font-semibold text-gray-600 md:text-justify md:text-lg md:font-medium">
