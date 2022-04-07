@@ -6,11 +6,41 @@ import AINavbar from '../../components/ai/AINavbar'
 import ArticlesList from '../../components/ai/articles/ArticlesList'
 
 const Home = () => {
+  const meta = {
+    title: 'HelloPython AI | Home',
+    description:
+      'All the Resources you need for Python Programming | From Web to AI and Machine Learning',
+    image: '/helloPython.svg',
+    type: 'website',
+  }
+
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
       <Head>
         <title>Python AI | Home</title>
         <link rel="icon" href="/favicon.svg" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charSet="utf-8" />
+        <meta
+          name="description"
+          content="All the Resources you need for Python Programming | From Web to AI and Machine Learning"
+        />
+        <link rel="icon" href="/favicon.svg" />
+
+        <meta property="og:type" content={meta.type} />
+        <meta property="og:site_name" content="helloPython" />
+        <meta property="og:description" content={meta.description} />
+        <meta property="og:title" content={meta.title} />
+        <meta property="og:image" content={meta.image} />
+        <meta
+          name="twitter:card"
+          content="All Free Resources for Python Developers"
+        />
+        <meta name="twitter:site" content="@KennKibadi" />
+        <meta name="twitter:title" content={meta.title} />
+        <meta name="twitter.description" content={meta.description} />
+        <meta name="twitter:image" content={meta.image} />
       </Head>
 
       {/* <Navbar /> */}
