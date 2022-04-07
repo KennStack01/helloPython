@@ -6,5 +6,6 @@ let rssURLs = [
   'https://koaning.io/index.xml',
   'https://www.freecodecamp.org/news/rss/',
   'https://ml.berkeley.edu/blog/rss.xml',
+  'https://machinelearningmastery.com/feed/',
 ]
 export default rssURLs

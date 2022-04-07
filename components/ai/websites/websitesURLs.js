@@ -31,5 +31,9 @@ let websitesURLs = [
     name: 'Towards AI',
     url: 'https://pub.towardsai.net/',
   },
+  {
+    name: 'Machine Learning Mastery',
+    url: 'https://machinelearningmastery.com/start-here/',
+  },
 ]
 export default websitesURLs
