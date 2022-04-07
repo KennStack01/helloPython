@@ -49,7 +49,7 @@ const Navbar = () => {
             </a>
           </Link>
         </div>
-        <div>
+        {/* <div>
           <Link href="/">
             <a
               className={`${
@@ -61,7 +61,7 @@ const Navbar = () => {
               JOBS
             </a>
           </Link>
-        </div>
+        </div> */}
       </div>
       {/* <div className="my-auto hidden md:block">
         <DotsMenu />
