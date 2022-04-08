@@ -1,84 +1,23 @@
 import React, { useState, useEffect } from 'react'
-import keywords from '../keywords'
-import rssList from './rssList'
 import Video from './Video'
-import Parser from 'rss-parser'
 import { Link } from 'react-scroll'
 import { HideScroll } from 'react-hide-on-scroll'
 import { RiArrowUpCircleFill } from 'react-icons/ri'
 
-const VideosList = () => {
-  const [videos, setVideos] = useState([])
-  const [temp, setTemp] = useState([])
-  const [data, setData] = useState([])
+const VideosList = ({ dataVideos }) => {
   const [loading, setLoading] = useState(true)
   const [searchTerm, setSearchTerm] = useState('')
-  const [showbtn, setShowBtn] = useState(false)
-
-  const fetchSingleFeed = async (url) => {
-    let parser = new Parser()
-    const feed = await parser.parseURL(`https://cors.eu.org/${url}`)
-
-    return feed
-  }
-
-  function shuffleArray(array) {
-    for (var i = array.length - 1; i > 0; i--) {
-      var j = Math.floor(Math.random() * (i + 1))
-
-      var temp = array[i]
-      array[i] = array[j]
-      array[j] = temp
-    }
-
-    return array
-  }
-
-  const fetchvideos = async (list) => {
-    let data = []
-    for (let i = 0; i < list.length; i++) {
-      const feed = await fetchSingleFeed(list[i])
-      const filterdFeed = feed.items.filter((item) => {
-        return keywords.some((keyword) => {
-          return (
-            item.title.toLowerCase().includes(keyword) &&
-            !item.title
-              .toLowerCase()
-              .includes('game' || 'games' || 'nlp' || 'machine learning')
-          )
-          // ||
-          // item.content.toLowerCase().includes(keyword)
-        })
-      })
-      data.push(filterdFeed)
-      //   data.push(feed.items)
-    }
-    return data
-  }
-
-  const getMorevideos = async () => {
-    fetchvideos(rssList)
-      .then((data) => {
-        setData(data)
-      })
-      .then(() => {
-        const merged = [].concat.apply([], data) // to merged all arrays within data
-        const tempArray = shuffleArray(merged)
-        setVideos(tempArray.slice(0, 80))
-        setLoading(false)
-        setShowBtn(true)
-        console.log('videos: ', merged)
-      })
-  }
 
   useEffect(() => {
-    getMorevideos()
-  }, [loading])
+    if (dataVideos.length < 0) {
+      setLoading(false)
+    }
+  }, [dataVideos])
 
   return (
     <div>
       <div>
-        {loading && videos.length < 1 ? (
+        {loading && dataVideos.length < 1 ? (
           <h3 className="text-md mx-auto my-10 text-center font-semibold md:my-20 md:text-xl">
             Loading...
           </h3>
@@ -94,7 +33,7 @@ const VideosList = () => {
               />
             </div>
             <div className="mx-auto grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-4 lg:grid-cols-4">
-              {videos
+              {dataVideos
                 ?.filter((video) => {
                   if (searchTerm === '') {
                     return video
@@ -113,7 +52,7 @@ const VideosList = () => {
                 .map((video, index) => (
                   <div key={index}>
                     <Video
-                      imageURL={`https://img.youtube.com/vi/${video.id.substring(
+                      imageURL={`https://img.youtube.com/vi/${video?.id?.substring(
                         9
                       )}/hqdefault.jpg`}
                       title={video.title}

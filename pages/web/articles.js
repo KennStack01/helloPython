@@ -5,7 +5,11 @@ import Sidebar from '../../components/sidebar/web'
 import WebNavbar from '../../components/web/WebNavbar'
 import ArticlesList from '../../components/web/articles/ArticlesList'
 
-const Articles = () => {
+import rssList from '../../components/web/articles/rssList'
+import keywords from '../../components/web/keywords'
+import Parser from 'rss-parser'
+
+const Articles = ({ data }) => {
   const meta = {
     title: 'Python Web | Articles',
     description:
@@ -51,7 +55,7 @@ const Articles = () => {
       </div>
       <main className="flex w-full flex-1 flex-col items-center bg-turbo-gray-500 px-2 text-center md:px-5">
         <WebNavbar />
-        <ArticlesList />
+        <ArticlesList dataArticles={data} />
       </main>
 
       <footer className="md:text-md flex h-6 w-full items-center justify-center border-t text-sm md:h-10">
@@ -69,6 +73,68 @@ const Articles = () => {
       </footer>
     </div>
   )
+}
+
+export async function getServerSideProps() {
+  // Variables
+  let articles = []
+  let loading = true
+  let myData = []
+
+  // Fetch data from external API
+  const fetchSingleFeed = async (url) => {
+    let parser = new Parser()
+    const feed = await parser.parseURL(`https://cors.eu.org/${url}`)
+
+    return feed
+  }
+
+  function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1))
+
+      var temp = array[i]
+      array[i] = array[j]
+      array[j] = temp
+    }
+
+    return array
+  }
+
+  const fetchArticles = async (list) => {
+    let data = []
+    for (let i = 0; i < list.length; i++) {
+      const feed = await fetchSingleFeed(list[i])
+      const filterdFeed = feed.items.filter((item) => {
+        return keywords.some((keyword) => {
+          return (
+            item.title.toLowerCase().includes(keyword) ||
+            item.content?.toLowerCase().includes(keyword)
+          )
+        })
+      })
+      data.push(filterdFeed)
+      //   data.push(feed.items)
+    }
+    return data
+  }
+
+  const getMoreArticles = async () => {
+    myData = await fetchArticles(rssList)
+    const merged = [].concat.apply([], myData)
+    const tempArray = shuffleArray(merged)
+    articles = tempArray.slice(0, 70)
+    loading = false
+
+    // console.log('Articles: ', articles)
+    return articles
+  }
+
+  const data = await getMoreArticles()
+
+  return {
+    props: { data: data || null },
+  }
 }
 
 export default Articles
