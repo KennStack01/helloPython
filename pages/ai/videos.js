@@ -5,7 +5,11 @@ import Sidebar from '../../components/sidebar/ai'
 import AINavbar from '../../components/ai/AINavbar'
 import VideosList from '../../components/ai/videos/VideosList'
 
-const Videos = () => {
+import rssList from '../../components/ai/videos/rssList'
+import keywords from '../../components/ai/keywords'
+import Parser from 'rss-parser'
+
+const Videos = ({ data }) => {
   const meta = {
     title: 'HelloPython AI | Videos',
     description:
@@ -52,7 +56,7 @@ const Videos = () => {
       </div>
       <main className="flex w-full flex-1 flex-col items-center bg-turbo-gray-500 px-2 text-center md:px-5">
         <AINavbar />
-        <VideosList />
+        <VideosList dataVideos={data} />
       </main>
 
       <footer className="md:text-md flex h-6 w-full items-center justify-center border-t text-sm md:h-10">
@@ -71,5 +75,69 @@ const Videos = () => {
     </div>
   )
 }
+
+
+export async function getServerSideProps() {
+  // Variables
+  let videos = []
+  let loading = true
+  let myData = []
+
+  // Fetch data from external API
+  const fetchSingleFeed = async (url) => {
+    let parser = new Parser()
+    const feed = await parser.parseURL(`https://cors.eu.org/${url}`)
+
+    return feed
+  }
+
+  function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1))
+
+      var temp = array[i]
+      array[i] = array[j]
+      array[j] = temp
+    }
+
+    return array
+  }
+
+  const fetchVideos = async (list) => {
+    let data = []
+    for (let i = 0; i < list.length; i++) {
+      const feed = await fetchSingleFeed(list[i])
+      const filterdFeed = feed.items.filter((item) => {
+        return keywords.some((keyword) => {
+          return (
+            item.title.toLowerCase().includes(keyword) &&
+            !item.title.toLowerCase().includes('html')
+          )
+        })
+      })
+      data.push(filterdFeed)
+      //   data.push(feed.items)
+    }
+    return data
+  }
+
+  const getMoreVideos = async () => {
+    myData = await fetchVideos(rssList)
+    const merged = [].concat.apply([], myData)
+    const tempArray = shuffleArray(merged)
+    videos = tempArray.slice(0, 70)
+    loading = false
+
+    // console.log('videos: ', videos)
+    return videos
+  }
+
+  const data = await getMoreVideos()
+
+  return {
+    props: { data: data || null },
+  }
+}
+
 
 export default Videos

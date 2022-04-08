@@ -7,86 +7,20 @@ import { HideScroll } from 'react-hide-on-scroll'
 import { RiArrowUpCircleFill } from 'react-icons/ri'
 import News from './News'
 
-const NewsList = () => {
-  const [news, setNews] = useState([])
-  const [temp, setTemp] = useState([])
-  const [data, setData] = useState([])
+const NewsList = ({ dataNews }) => {
   const [loading, setLoading] = useState(true)
   const [searchTerm, setSearchTerm] = useState('')
-  const [showbtn, setShowBtn] = useState(false)
-
-  const fetchSingleFeed = async (url) => {
-    let parser = new Parser()
-    const feed = await parser.parseURL(`https://cors.eu.org/${url}`)
-
-    return feed
-  }
-
-  function shuffleArray(array) {
-    for (var i = array.length - 1; i > 0; i--) {
-      var j = Math.floor(Math.random() * (i + 1))
-
-      var temp = array[i]
-      array[i] = array[j]
-      array[j] = temp
-    }
-
-    return array
-  }
-
-  const fetchNews = async (list) => {
-    let data = []
-    for (let i = 0; i < list.length; i++) {
-      const feed = await fetchSingleFeed(list[i])
-      const filterdFeed = feed.items.filter((item) => {
-        return keywords.some((keyword) => {
-          return (
-            item.title.toLowerCase().includes(keyword) ||
-            item.content.toLowerCase().includes(keyword)
-          )
-        })
-      })
-      data.push(filterdFeed)
-      //   data.push(feed.items)
-    }
-    return data
-  }
-
-  //   const getTenElements = (array, limit) => {
-  //     let temp = []
-  //     if (array.length > limit) {
-  //       for (let i = 0; i < array.length; i++) {
-  //         temp = [...temp, array[i]].slice(0, limit)
-  //       }
-  //     } else {
-  //       temp = array
-  //     }
-  //     return temp
-  //   }
-
-  const getMoreNews = async () => {
-    fetchNews(rssList)
-      .then((data) => {
-        setData(data)
-      })
-      .then(() => {
-        const merged = [].concat.apply([], data) // to merged all arrays within data
-        const tempArray = shuffleArray(merged)
-        setNews(tempArray.slice(0, 70))
-        setLoading(false)
-        setShowBtn(true)
-        console.log('news: ', news)
-      })
-  }
 
   useEffect(() => {
-    getMoreNews()
-  }, [loading])
+    if (dataNews.length < 0) {
+      setLoading(false)
+    }
+  }, [dataNews])
 
   return (
     <div>
       <div>
-        {loading && news.length < 1 ? (
+        {loading && dataNews.length < 1 ? (
           <h3 className="text-md mx-auto my-10 text-center font-semibold md:my-20 md:text-xl">
             Loading...
           </h3>
@@ -102,7 +36,7 @@ const NewsList = () => {
               />
             </div>
             <div className="mx-auto grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-4 lg:grid-cols-4">
-              {news
+              {dataNews
                 ?.filter((article) => {
                   if (searchTerm === '') {
                     return article
@@ -134,7 +68,6 @@ const NewsList = () => {
           <HideScroll variant="down">
             <Link
               to="banner"
-              // to="MenuTab"
               smooth={true}
               duration={1000}
               className="sticky bottom-4 flex flex-row justify-between"
