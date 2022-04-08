@@ -10,7 +10,15 @@ const Navbar = () => {
       <Link href="/">
         <a
           className={`${
-            router.pathname == '/' &&
+            router.pathname == '/' ||
+            router.pathname == '/web' ||
+            router.pathname.includes('/web/articles') ||
+            router.pathname.includes('/web/websites') ||
+            router.pathname.includes('/web/ebooks') ||
+            (router.pathname.includes('/web/videos') &&
+              (!router.pathname.includes('/web/news') ||
+                !router.pathname.includes('/web/resources')))
+            &&
             (!router.pathname.includes('/web/news') ||
               !router.pathname.includes('/web/resources'))
               ? 'active border-b-4 border-turbo-blue-500 font-semibold text-black'
