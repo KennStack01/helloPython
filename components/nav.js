@@ -49,9 +49,11 @@ const Navbar = () => {
             </a>
           </Link>
         </div>
-        {/* <div>
-          <Link href="/">
+        <div>
+          <>
             <a
+              href="https://www.pyhunt.com"
+              target="_blank"
               className={`${
                 router.pathname.includes('/jobs')
                   ? 'active bg-turbo-blue-500 font-semibold text-white shadow-sm'
@@ -60,8 +62,8 @@ const Navbar = () => {
             >
               JOBS
             </a>
-          </Link>
-        </div> */}
+          </>
+        </div>
       </div>
       {/* <div className="my-auto hidden md:block">
         <DotsMenu />

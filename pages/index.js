@@ -127,7 +127,7 @@ export async function getServerSideProps() {
     articles = tempArray.slice(0, 70)
     loading = false
 
-    // console.log('Articles: ', articles)
+    console.log('Articles: ', articles)
     return articles
   }
 

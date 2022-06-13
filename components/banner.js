@@ -54,20 +54,24 @@ const Banner = () => {
           </div>
         </div>
       </div>
-      <Link href="/sponsor">
+      <>
         <a className="flex cursor-pointer flex-col place-content-end rounded-3xl bg-turbo-blue-600 py-4 px-4 md:py-10 md:px-8">
-          <p className="md:text-md text-xs md:italic">Sponsor Space</p>
+          <p className="md:text-md text-xs md:italic">Hiring Engineers</p>
           <h2 className="md:text-md mb-4 text-center text-xs font-bold">
-            Call Kenn😎
+            Python Jobs 💼
           </h2>
-          <div className="flex flex-row justify-center rounded-xl bg-yellow-500 p-2 font-bold text-turbo-blue-700">
+          <a
+            href="https://www.pyhunt.com"
+            target="_blank"
+            className="flex flex-row justify-center rounded-xl bg-yellow-500 p-2 font-bold text-turbo-blue-700"
+          >
             <p className="md:text-md text-sm">Open</p>
             <div className="my-auto text-xl">
               <BiDoorOpen />
             </div>
-          </div>
+          </a>
         </a>
-      </Link>
+      </>
 
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog
