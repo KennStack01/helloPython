@@ -9,7 +9,7 @@ import rssList from '../../components/ai/articles/rssList'
 import keywords from '../../components/ai/keywords'
 import Parser from 'rss-parser'
 
-const Articles = ({data}) => {
+const Articles = ({ data }) => {
   const meta = {
     title: 'HelloPython AI | Articles',
     description:
@@ -57,7 +57,7 @@ const Articles = ({data}) => {
       </div>
       <main className="flex w-full flex-1 flex-col items-center bg-turbo-gray-500 px-2 text-center md:px-5">
         <AINavbar />
-        <ArticlesList dataArticles={data}  />
+        <ArticlesList dataArticles={data} />
       </main>
 
       <footer className="md:text-md flex h-6 w-full items-center justify-center border-t text-sm md:h-10">
@@ -76,8 +76,6 @@ const Articles = ({data}) => {
     </div>
   )
 }
-
-
 
 export async function getServerSideProps() {
   // Variables
@@ -124,9 +122,10 @@ export async function getServerSideProps() {
   }
 
   const getMoreArticles = async () => {
-    myData = await fetchArticles(rssList)
+    myData = await fetchArticles(shuffleArray(rssList))
     const merged = [].concat.apply([], myData)
-    const tempArray = shuffleArray(merged)
+    const tempArray = merged
+    // const tempArray = shuffleArray(merged)
     articles = tempArray.slice(0, 70)
     loading = false
 
@@ -140,6 +139,5 @@ export async function getServerSideProps() {
     props: { data: data || null },
   }
 }
-
 
 export default Articles

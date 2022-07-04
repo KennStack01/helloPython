@@ -10,7 +10,7 @@ const Article = ({ imageURL, title, link }) => {
       <img
         src={
           imageURL ||
-          'https://media.giphy.com/media/MCd33lAKSLajqWT60m/giphy.gif'
+          'https://media2.giphy.com/media/YnexM9LwlwGu4Z1QnS/200w.webp?cid=ecf05e47c84hduahx2b1nwes85h0kh5sz9yjm9tc05lohhw4&rid=200w.webp&ct=g'
         }
         alt={imageURL ? title : 'AI Gif by giphy'}
         className="h-36 w-full overflow-hidden rounded-md object-cover text-xs duration-300 ease-in-out group-hover:scale-110 group-hover:rounded-md group-hover:transition-transform md:h-60"

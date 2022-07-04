@@ -77,7 +77,6 @@ const Forums = ({ data }) => {
   )
 }
 
-
 export async function getServerSideProps() {
   // Variables
   let forums = []
@@ -122,9 +121,10 @@ export async function getServerSideProps() {
   }
 
   const getMoreForums = async () => {
-    myData = await fetchForums(rssList)
+    myData = await fetchForums(shuffleArray(rssList))
     const merged = [].concat.apply([], myData)
-    const tempArray = shuffleArray(merged)
+    const tempArray = merged
+    // const tempArray = shuffleArray(merged)
     forums = tempArray.slice(0, 70)
 
     // console.log('forums: ', forums)

@@ -76,7 +76,6 @@ const Videos = ({ data }) => {
   )
 }
 
-
 export async function getServerSideProps() {
   // Variables
   let videos = []
@@ -122,9 +121,10 @@ export async function getServerSideProps() {
   }
 
   const getMoreVideos = async () => {
-    myData = await fetchVideos(rssList)
+    myData = await fetchVideos(shuffleArray(rssList))
     const merged = [].concat.apply([], myData)
-    const tempArray = shuffleArray(merged)
+    const tempArray = merged
+    // const tempArray = shuffleArray(merged)
     videos = tempArray.slice(0, 70)
     loading = false
 
@@ -138,6 +138,5 @@ export async function getServerSideProps() {
     props: { data: data || null },
   }
 }
-
 
 export default Videos

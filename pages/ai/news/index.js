@@ -9,7 +9,7 @@ import rssList from '../../../components/ai/news/rssList'
 import keywords from '../../../components/ai/keywords'
 import Parser from 'rss-parser'
 
-const Home = ({data }) => {
+const Home = ({ data }) => {
   const meta = {
     title: 'HelloPython AI | News',
     description:
@@ -77,8 +77,6 @@ const Home = ({data }) => {
   )
 }
 
-
-
 export async function getServerSideProps() {
   // Variables
   let articles = []
@@ -123,9 +121,10 @@ export async function getServerSideProps() {
   }
 
   const getMoreArticles = async () => {
-    myData = await fetchArticles(rssList)
+    myData = await fetchArticles(shuffleArray(rssList))
     const merged = [].concat.apply([], myData)
-    const tempArray = shuffleArray(merged)
+    const tempArray = merged
+    // const tempArray = shuffleArray(merged)
     articles = tempArray.slice(0, 70)
 
     // console.log('Articles: ', articles)
@@ -138,6 +137,5 @@ export async function getServerSideProps() {
     props: { data: data || null },
   }
 }
-
 
 export default Home

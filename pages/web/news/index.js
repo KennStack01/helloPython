@@ -119,9 +119,10 @@ export async function getServerSideProps() {
   }
 
   const getMoreArticles = async () => {
-    myData = await fetchArticles(rssList)
+    myData = await fetchArticles(shuffleArray(rssList))
     const merged = [].concat.apply([], myData)
-    const tempArray = shuffleArray(merged)
+    const tempArray = merged
+    // const tempArray = shuffleArray(merged)
     articles = tempArray.slice(0, 70)
 
     // console.log('Articles: ', articles)
